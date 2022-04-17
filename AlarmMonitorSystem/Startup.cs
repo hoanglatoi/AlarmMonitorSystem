@@ -9,7 +9,7 @@ using AlarmMonitorSystem.QueueProcess;
 
 namespace AlarmMonitorSystem
 {
-    public class Startup
+    public class Startup : IDisposable
     {
         private static readonly log4net.ILog _logger
            = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType);
@@ -27,7 +27,7 @@ namespace AlarmMonitorSystem
             plcCom.StartAsync(new CancellationToken());
         }
 
-        ~Startup()
+        public void Dispose()
         {
             CommonResource.Instance.MailQueue.Stop();
             CommonResource.Instance.SoundQueue.Stop();
