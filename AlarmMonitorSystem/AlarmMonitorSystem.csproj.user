@@ -8,7 +8,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\SwitchMenu.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="MainFrm.cs">
       <SubType>Form</SubType>

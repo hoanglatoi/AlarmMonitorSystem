@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AlarmMonitorSystem.Data;
 using AlarmMonitorSystem.Models;
 using AlarmMonitorSystem.QueueProcess;
+using AlarmMonitorSystem.SubForm;
 
 namespace AlarmMonitorSystem.Notify
 {
@@ -23,7 +24,10 @@ namespace AlarmMonitorSystem.Notify
         {
             if (Subject is Alarm)
             {
+                Alarm alarm = (Alarm)Subject;
                 // Update View
+                if(alarm.GetState() == AlarmState.Occurrence)
+                    RouteFormManager.Instance.SumaryFrm.ChangeView(alarm.ID);
             }
         }
     }

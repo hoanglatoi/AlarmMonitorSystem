@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.switchMenu1 = new AlarmMonitorSystem.Controls.SwitchMenu();
+            this.SuspendLayout();
+            // 
+            // switchMenu1
+            // 
+            this.switchMenu1.Location = new System.Drawing.Point(152, 377);
+            this.switchMenu1.Name = "switchMenu1";
+            this.switchMenu1.Size = new System.Drawing.Size(478, 61);
+            this.switchMenu1.TabIndex = 0;
+            // 
+            // HistoriesFrm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.switchMenu1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "HistoriesFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HistoriesFrm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HistoriesFrm_FormClosed);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Controls.SwitchMenu switchMenu1;
     }
 }

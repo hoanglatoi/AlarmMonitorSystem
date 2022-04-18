@@ -16,5 +16,10 @@ namespace AlarmMonitorSystem.SubForm
         {
             InitializeComponent();
         }
+
+        private void HistoriesFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RouteFormManager.Instance.CloseForm();
+        }
     }
 }

@@ -14,8 +14,6 @@ namespace AlarmMonitorSystem
         private static readonly log4net.ILog _logger
            = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType);
 
-        
-
         public Startup()
         {
             CommonResource.Instance.MailQueue.QueueClear();

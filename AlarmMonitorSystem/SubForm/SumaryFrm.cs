@@ -15,6 +15,22 @@ namespace AlarmMonitorSystem.SubForm
         public SumaryFrm()
         {
             InitializeComponent();
+            
+        }
+
+        private void SumaryFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RouteFormManager.Instance.CloseForm();
+        }
+
+        public void ChangeView(int alarmID)
+        {
+            if(IsHandleCreated == false) return;
+            label1.Invoke(new Action(() =>
+            {
+                label1.Text = "Alarm: " + alarmID.ToString();
+                label1.BackColor = Color.Red;
+            }));
         }
     }
 }

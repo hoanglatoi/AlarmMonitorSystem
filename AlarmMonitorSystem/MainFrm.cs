@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AlarmMonitorSystem.SubForm;
 
 namespace AlarmMonitorSystem
 {
@@ -15,7 +16,9 @@ namespace AlarmMonitorSystem
         Startup startup;
         public MainFrm()
         {
-            InitializeComponent();
+            InitializeComponent();          
+            RouteFormManager.Instance.MainFrm = this;
+            RouteFormManager.Instance.ChangeFrom(RouteFormManager.Instance.SumaryFrm);
             startup = new Startup();
             startup.TestScheduleTimer();
         }
